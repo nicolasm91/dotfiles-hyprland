@@ -1,0 +1,44 @@
+@import url("file:///home/otsnd/.cache/wal/colors-waybar.css");
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+}
+
+window#osd {
+    background-color: alpha(@color0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    border-bottom: 1px solid alpha(#ffffff, 0.3);
+    min-width: 300px;
+    min-height: 100px;
+}
+
+window#osd image {
+  -gtk-icon-transform: scale(0.7);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+progressbar {
+    min-height: 15px;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+trough {
+    min-height: 15px;
+    background-color: @color2;
+    border-radius: 5px;
+}
+
+progress {
+    min-height: 22px;
+    background-color: @color5;
+    border-radius: 5px;
+}
+
+label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    min-width: 60px;
+}

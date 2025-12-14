@@ -1,0 +1,182 @@
+@import url("file:///home/otsnd/.cache/wal/colors-waybar.css");
+
+* {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  border-bottom: 1px solid alpha(#ffffff, 0.5);
+  border-radius: 12px;
+}
+
+tooltip {
+  background: alpha(@background, 0.6);
+  border-radius: 18px;
+}
+
+tooltip label {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+#custom-fedora-logo,
+#workspaces,
+#window,
+#clock,
+#custom-notification,
+#tray,
+#language,
+#custom-power {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+#custom-fedora-logo {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 16px;
+  font-size: 32px;
+}
+
+#custom-fedora-logo:hover {
+  color: @color3;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+  color: @color3;
+  font-weight: bold;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+#workspaces button:hover {
+  color: @color5;
+  background-color: alpha(@color3, 0.3);
+  background-image: none;
+  box-shadow: none;
+  border: none;
+}
+
+#workspaces button:active,
+#workspaces button:checked {
+  color: @color3;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+#window {
+  padding: 0 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#clock {
+  padding: 0 2px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#custom-notification {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 8px;
+  font-size: 21px;
+}
+
+#custom-notification:hover {
+  color: @color3;
+  transition: all 0.3s ease-in-out;
+}
+
+#custom-cpu-icon {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 16px;
+  font-size: 20px;
+}
+
+#custom-cpu-icon:hover {
+  color: @color3;
+  transition: all 0.3s ease-in-out;
+}
+
+#cpu {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#custom-temperature-icon {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 16px;
+  font-size: 20px;
+}
+
+#custom-temperature-icon:hover {
+  color: @color3;
+  transition: all 0.3s ease-in-out;
+}
+
+#temperature {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#tray {
+  padding: 0 0px;
+  margin-right: 8px;
+}
+
+menu {
+    background: alpha(@background, 0.9);
+    border: 2px solid @color1;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+menuitem {
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+menuitem:hover {
+    background: @color1;
+    color: @background;
+}
+
+#language {
+  color: alpha(#ffffff, 1);
+  background-color: alpha(@color11, 0.2);
+  border-bottom: 1px solid alpha(@color11, 0.5);
+  border-radius: 0px;
+  padding: 0 8px;
+  font-size: 15px;
+  font-weight: bold;
+  font-weight: 100;
+}
+
+#custom-power {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 16px;
+  font-size: 18px;
+}
+
+#custom-power:hover {
+  color: @color3;
+  transition: all 0.3s ease-in-out;
+}

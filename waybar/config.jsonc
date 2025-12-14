@@ -1,0 +1,165 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 4,
+  "margin-left": 5,
+  "margin-right": 5,
+  "height": 42,
+  "spacing": 8,
+  
+  "modules-left": [
+    "custom/fedora-logo",
+    "hyprland/workspaces",
+    "hyprland/window",
+  ],
+  
+  "modules-center": [
+    "clock",
+  ],
+  
+  "modules-right": [
+    "tray",
+    "hyprland/language",
+    "group/cpu",
+    "group/temperature",
+    "custom/notification",
+    "custom/power"
+  ],
+
+  "group/cpu": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/cpu-icon",
+      "cpu",
+    ]
+  },
+
+  "custom/cpu-icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": " usage: {usage}% | avg freq: {avg_frequency} GHz",
+    "tooltip": false
+  },
+
+  "group/temperature": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/temperature-icon",
+      "temperature",
+    ]
+  },
+
+  "custom/temperature-icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "temperature": {
+    "interval": 5,
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+    "critical-threshold": 80,
+    "format": "󰻠 tctl: {temperatureC}°C",
+    "format-icons": ["󰜏", "󰜏", "󰜏"]
+  },
+
+  // LEFT MODULES
+  "custom/fedora-logo": {
+  "format": "",
+  "tooltip": false,
+  "on-click": "rofi -show"
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{id}",
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  
+  "hyprland/window": {
+    "format": "  {}",
+    "max-length": 50,
+    "separate-outputs": true,
+    "rewrite": {
+      "": "Desktop"
+    }
+  },
+
+  // CENTER MODULES
+  "clock": {
+    "locale": "es_ES.utf8",
+    "timezone": "America/Argentina/Buenos_Aires",
+    "format": "{:L%H:%M  %A %d de %B}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "locale": "es_AR.utf8",
+      "format": {
+        "months": "<span color='#a6e3a1'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'><b>{}</b></span>",
+        "weeks": "<span color='#89b4fa'><b>W{}</b></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "tray": {
+        "icon-size": 21,
+        "spacing": 25
+    },
+
+
+  // OTHER RIGHT MODULES
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": " EN ",
+    "format-es": " ES ",
+    "on-click": "hyprctl switchxkblayout keychron-keychron-k6-pro==¿¿ next"
+  },
+
+  "custom/notification": {
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='#cba135'>󰂚</span>",
+      "none": "󰂜",
+      "dnd-notification": "<span foreground='#cba135'>󰂛</span>",
+      "dnd-none": "󰪑",
+      "inhibited-notification": "<span foreground='#cba135'>󰂚</span>",
+      "inhibited-none": "󰂜",
+      "dnd-inhibited-notification": "<span foreground='#cba135'>󰂛</span>",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+    "tooltip": true
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "wlogout --protocol layer-shell -b 5",
+    "tooltip": false
+  }
+}

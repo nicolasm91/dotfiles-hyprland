@@ -1,0 +1,32 @@
+@import url("file:///home/otsnd/.cache/wal/colors-waypaper.css");
+
+*{
+	-gtk-icon-shadow: none;
+    -gtk-icon-effect: none;
+    box-shadow: none;
+}
+
+window{
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #ffffff;
+	border-bottom: 1px solid alpha(#ffffff, 0.5);
+	border-radius: 12px;
+}
+
+button {
+	border-radius: 10px;
+}
+
+button:hover {
+    background-image: none;
+    background-color: alpha(@color5, 0.3);
+    border: 2px solid;
+    border-color: @color4;
+}
+
+.highlighted-button {
+    background-image: none;
+    background-color: alpha(@color5, 0.3);
+    border: 2px solid;
+    border-color: @color4;
+}

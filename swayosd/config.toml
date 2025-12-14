@@ -1,0 +1,11 @@
+[server]
+## on which height to show the OSD
+#top_margin = 20
+
+## The maximum volume that can be reached in %
+max_volume = 100
+
+## show percentage on the right of the OSD
+show_percentage = true
+
+[client]
